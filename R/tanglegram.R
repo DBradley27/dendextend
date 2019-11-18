@@ -921,8 +921,8 @@ tanglegram.dendrogram <- function(dend1, dend2, sort = FALSE,
     dend1_leaves_colors <- as.vector(na.omit(dend1_leaves_colors))
     tmp <- clusters1
     tmp[tmp != 0] <- dend1_leaves_colors
-    dend1_leaves_colors <- common_subtrees_color_lines_default_single_leaf_color
-    dend1_leaves_colors[tmp == 0] <- common_subtrees_color_lines_default_single_leaf_color
+    dend1_leaves_colors <- tmp
+    dend1_leaves_colors[tmp == 0] <- "black"
 
     # match_1_to_be_2
     ss <- match(labels(dend2), labels(dend1))
@@ -949,13 +949,13 @@ tanglegram.dendrogram <- function(dend1, dend2, sort = FALSE,
     # If I know I am using the common_subtrees_color_branches
     # I might as well match them to the lines:
     if (common_subtrees_color_lines) {
-      color_lines <- common_subtrees_color_lines_default_single_leaf_color
+      color_lines <- dend1_leaves_colors
       color_lines[is.na(color_lines)] <- common_subtrees_color_lines_default_single_leaf_color
     }
   }
 
   # if we didn't resolve color_lines yet - let's figure it out now:
- 
+
     if (common_subtrees_color_lines) {
       #          color_lines <- rep("black", nleaves(dend1))
       #          lines_color_clusters <- common_subtrees_clusters(dend1, dend2, leaves_get_0_cluster = TRUE)
@@ -972,9 +972,8 @@ tanglegram.dendrogram <- function(dend1, dend2, sort = FALSE,
 
       ss_0s <- replace_unique_items_with_0_and_rank(lines_color_clusters) == 0
       color_lines[ss_0s] <- common_subtrees_color_lines_default_single_leaf_color
-      color_lines <- common_subtrees_color_lines_default_single_leaf_color
     } else {
-      color_lines <- common_subtrees_color_lines_default_single_leaf_color
+      color_lines <- "darkgrey"
     }
 
 
