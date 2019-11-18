@@ -920,8 +920,8 @@ tanglegram.dendrogram <- function(dend1, dend2, sort = FALSE,
     # based on the 0s in clusters1, I am able to fit the colors properly in both cases.
     dend1_leaves_colors <- as.vector(na.omit(dend1_leaves_colors))
     tmp <- clusters1
-    tmp[tmp != 0] <- common_subtrees_color_lines_default_single_leaf_color
-    dend1_leaves_colors <- tmp
+    tmp[tmp != 0] <- dend1_leaves_colors
+    dend1_leaves_colors <- common_subtrees_color_lines_default_single_leaf_color
     dend1_leaves_colors[tmp == 0] <- common_subtrees_color_lines_default_single_leaf_color
 
     # match_1_to_be_2
