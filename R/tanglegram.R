@@ -973,7 +973,7 @@ tanglegram.dendrogram <- function(dend1, dend2, sort = FALSE,
       ss_0s <- replace_unique_items_with_0_and_rank(lines_color_clusters) == 0
       color_lines[ss_0s] <- common_subtrees_color_lines_default_single_leaf_color
     } else {
-      color_lines <- "darkgrey"
+      color_lines <- common_subtrees_color_lines_default_single_leaf_color
     }
   }
 
