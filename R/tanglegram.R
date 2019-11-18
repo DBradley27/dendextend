@@ -955,7 +955,7 @@ tanglegram.dendrogram <- function(dend1, dend2, sort = FALSE,
   }
 
   # if we didn't resolve color_lines yet - let's figure it out now:
-  if (missing(color_lines)) {
+ 
     if (common_subtrees_color_lines) {
       #          color_lines <- rep("black", nleaves(dend1))
       #          lines_color_clusters <- common_subtrees_clusters(dend1, dend2, leaves_get_0_cluster = TRUE)
@@ -975,7 +975,7 @@ tanglegram.dendrogram <- function(dend1, dend2, sort = FALSE,
     } else {
       color_lines <- common_subtrees_color_lines_default_single_leaf_color
     }
-  }
+
 
   if (highlight_branches_col) {
     if (!has_edgePar(dend1, "col")) dend1 <- highlight_branches_col(dend1)
