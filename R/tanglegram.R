@@ -963,19 +963,18 @@ tanglegram.dendrogram <- function(dend1, dend2, sort = FALSE,
       #          colors_for_lines_color <- lines_color_clusters[ss_not_0s] %>% unique %>% length %>% rainbow_fun
       #          color_lines[ss_not_0s] <- colors_for_lines_color[lines_color_clusters[ss_not_0s]]
 
-      lines_color_clusters <- common_subtrees_clusters(dend1, dend2, leaves_get_0_cluster = FALSE)
-      colors_for_lines_color <- lines_color_clusters %>%
-        unique() %>%
-        length() %>%
-        rainbow_fun()
-      color_lines <- colors_for_lines_color[lines_color_clusters]
+      #lines_color_clusters <- common_subtrees_clusters(dend1, dend2, leaves_get_0_cluster = FALSE)
+      #colors_for_lines_color <- lines_color_clusters %>%
+      #  unique() %>%
+      #  length() %>%
+      #  rainbow_fun()
+      #color_lines <- colors_for_lines_color[lines_color_clusters]
 
       ss_0s <- replace_unique_items_with_0_and_rank(lines_color_clusters) == 0
       color_lines[ss_0s] <- common_subtrees_color_lines_default_single_leaf_color
     } else {
       color_lines <- "darkgrey"
     }
-
 
   if (highlight_branches_col) {
     if (!has_edgePar(dend1, "col")) dend1 <- highlight_branches_col(dend1)
