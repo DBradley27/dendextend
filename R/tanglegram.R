@@ -963,7 +963,7 @@ tanglegram.dendrogram <- function(dend1, dend2, sort = FALSE,
       #          colors_for_lines_color <- lines_color_clusters[ss_not_0s] %>% unique %>% length %>% rainbow_fun
       #          color_lines[ss_not_0s] <- colors_for_lines_color[lines_color_clusters[ss_not_0s]]
 
-      #lines_color_clusters <- common_subtrees_clusters(dend1, dend2, leaves_get_0_cluster = FALSE)
+      lines_color_clusters <- common_subtrees_clusters(dend1, dend2, leaves_get_0_cluster = FALSE)
       #colors_for_lines_color <- lines_color_clusters %>%
       #  unique() %>%
       #  length() %>%
