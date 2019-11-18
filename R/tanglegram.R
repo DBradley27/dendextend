@@ -922,7 +922,7 @@ tanglegram.dendrogram <- function(dend1, dend2, sort = FALSE,
     tmp <- clusters1
     tmp[tmp != 0] <- dend1_leaves_colors
     dend1_leaves_colors <- tmp
-    dend1_leaves_colors[tmp == 0] <- "black"
+    dend1_leaves_colors[tmp == 0] <- common_subtrees_color_lines_default_single_leaf_color
 
     # match_1_to_be_2
     ss <- match(labels(dend2), labels(dend1))
