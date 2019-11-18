@@ -949,7 +949,7 @@ tanglegram.dendrogram <- function(dend1, dend2, sort = FALSE,
     # If I know I am using the common_subtrees_color_branches
     # I might as well match them to the lines:
     if (common_subtrees_color_lines) {
-      color_lines <- dend1_leaves_colors
+      color_lines <- common_subtrees_color_lines_default_single_leaf_color
       color_lines[is.na(color_lines)] <- common_subtrees_color_lines_default_single_leaf_color
     }
   }
